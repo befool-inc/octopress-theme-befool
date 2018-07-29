@@ -1,0 +1,155 @@
+/**
+ * BEFOOL側でCSSを整理したいので用意
+ *
+ * 採用情報用
+ */
+
+/**
+ * トップ
+ */
+div.main.recruit.index
+    ul.images
+        margin-top: 7px
+        li
+            float: left
+            margin: 0 20px 20px 0
+            vertical-align: bottom
+            line-height: 0px
+            *font-size: 0px
+            background: #FFFFFF
+            border: 1px solid #e6e1d5
+            a
+                @include hover-light
+                display: block
+                width: 313px
+                height: 83px
+                background: #FFFFFF
+                text-indent: -9999px
+            &.engineer a
+                background: url(#{$image-path}/recruit/btn_index01.gif) 0 0 no-repeat
+            &.illustrator a
+                background: url(#{$image-path}/recruit/btn_index02.gif) 0 0 no-repeat
+            &.secretary a
+                background: url(#{$image-path}/recruit/btn_index03.gif) 0 0 no-repeat
+        li.odd
+            margin-right: 0
+
+
+/**
+ * エンジニア募集
+ */
+div.main.recruit.engineer
+    @include service-block
+    table.recruit
+        tr td
+            ol li
+                list-style-type: decimal
+                margin-left: 18px
+            ul li.need
+                font-weight: bold
+
+
+/**
+ * イラストレーター募集
+ */
+div.main.recruit.illustrator
+    @include service-block
+    table.recruit
+        tr td
+            ol li
+                list-style-type: decimal
+                margin-left: 18px
+            ul li.need
+                font-weight: bold
+
+
+/**
+ * 社長秘書募集
+ */
+div.main.recruit.secretary
+    @include service-block
+    table.recruit
+        tr td
+            ol li
+                list-style-type: decimal
+                margin-left: 18px
+            ul li.need
+                font-weight: bold
+
+
+/**
+ * エントリーシート
+ */
+div.main.recruit.entry
+    table.form
+        th.required:after
+            content: "必須"
+            margin-left: 8px
+            color: #c67856
+            font-size: 10px
+            vertical-align: text-top
+        td
+            ul
+                @include after-clear
+                li
+                    float: left
+                    width: 200px
+                    overflow: hidden
+            input[type="checkbox"]
+                margin: 0 8px 11px 0
+            input[name="name"], input[name="mail"], input[name="tel"]
+                width: 267px
+                padding: 5px 0 6px 5px
+                border: 1px solid #c4bead
+            textarea
+                width: 433px
+                height: 177px
+                padding: 5px 0 0 5px
+                border: 1px solid #c4bead
+    p.entrytextBottom
+        margin: 25px 0 23px
+        font-size: 10px
+        letter-spacing: 1px
+    p.agree
+        text-align: center
+        input[type="checkbox"]
+            margin: 0 8px 11px 0
+    input.btnimg
+        @include hover-light
+        display: block
+        border: 0px
+        width: 179px
+        height: 40px
+        margin: 25px auto 0 
+        text-indent: 9999px
+        background: url(#{$image-path}/recruit/btn_entry.jpg) no-repeat left top
+    input.backimg
+        @include hover-light
+        display: block
+        float: left
+        border: 0px
+        width: 106px
+        height: 40px
+        text-indent: 9999px
+        background: url(#{$image-path}/recruit/btn_entry02.gif) no-repeat left top
+    input.sendimg
+        @include hover-light
+        display: block
+        float: left
+        border: 0px
+        width: 179px
+        height: 40px
+        margin-left: 20px
+        text-indent: 9999px
+        background: url(#{$image-path}/recruit/btn_entry.jpg) no-repeat left top
+    a.toplink
+        @include hover-light
+        display: inline-block
+        padding: 0 0 0 13px
+        margin: 0 auto
+        text-align: center
+        text-decoration: none
+        color: #554e44
+        font-weight: bold
+        background: url(#{$image-path}/arrow_blue.jpg) 0 5px no-repeat
+

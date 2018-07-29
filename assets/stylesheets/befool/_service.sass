@@ -1,0 +1,73 @@
+/**
+ * BEFOOL側でCSSを整理したいので用意
+ *
+ * サービス用
+ */
+
+
+/**
+ * 共有
+ */
+@mixin service-block
+    .block
+        clear: both
+        overflow: hidden
+        margin-bottom: 50px
+        &:last-child
+            margin-bottom: 0
+        img.thumb
+            display: block
+            height: 167px
+            width: 270px
+            border: 1px solid #e5e0d4
+            &.left
+                float: left
+                margin-right: 20px
+            &.right
+                float: right
+                margin-left: 20px
+        .text
+            width: 358px
+            float: right
+            overflow: hidden
+            p.description
+                margin-top: 0
+                margin-bottom: 28px
+            a.more
+                @include hover-light
+                padding: 0 0 0 15px
+                color: $text-color
+                font-weight: bold
+                text-decoration: none
+                background: url(#{$image-path}/arrow_blue.jpg) 0 1px no-repeat
+
+
+/**
+ * トップ
+ */
+div.main.service.index
+    @include service-block
+    .block
+        img.thumb
+            border: none
+
+/**
+ * ソーシャル
+ */
+div.main.service.social_appli
+    @include service-block
+
+/**
+ * スマフォ
+ */
+div.main.service.smartphone_appli
+    @include service-block
+
+/**
+ * Creative Hub
+ */
+div.main.service.creative_hub
+    @include service-block
+
+div.main.service.spine
+    @include service-block

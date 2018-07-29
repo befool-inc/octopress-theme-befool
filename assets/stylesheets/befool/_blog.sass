@@ -1,0 +1,313 @@
+/**
+ * BEFOOL側でCSSを整理したいので用意
+ *
+ * ブログ用
+ */
+
+/**
+ * トップ
+ */
+div.main.blog.index
+    .kvtext
+        margin-bottom: 48px
+
+/**
+ * 記事
+ */
+div.main.blog article, div.main.wiki article
+    header, footer
+        h1.entry-title
+            @include clearfix
+            height: 80px
+            color: #444444
+            font-size: 24px
+            height: auto
+            margin-bottom: 10px
+        p.date
+            margin: 0
+            margin-right: 10px
+            time
+                color: #444444
+                font-size: 16px
+        .meta
+            @include clearfix
+            width: 100%
+            margin-bottom: 20px
+            padding-bottom: 10px
+            background: url(#{$image-path}/line_horizon.png) repeat-x bottom left
+            ul.categories
+                @include after-clear
+                margin-bottom: 10px
+                padding: 5px
+                width: $width - 10px
+                background: url(#{$image-path}/line_horizon.png) repeat-x bottom left lighten($bg-color, 5)
+                li
+                    float: left
+                    margin-right: 10px
+                li a
+                    @include border-radius(4px)
+                    display: block
+                    padding: 3px 10px
+                    color: $category-text-color
+                    background-color: $category-bg-color
+                    text-decoration: none
+            div.sharing
+                clear: left
+                float: right
+                height: 70px
+                width: 360px
+                overflow: visible
+                text-align: right
+                div, .pocket-btn
+                    display: inline-flex
+                    vertical-align: baseline
+                    font-size: 1px
+                    text-indent: 0px
+                    float: none
+                    line-height: normal
+                    margin: 0px
+                    padding: 0px
+                    position: static
+                div.fb_iframe_widget
+                    display: inline
+                    vertical-align: top
+            div.author
+                @include after-clear
+                float: left
+                width: 285px
+                img
+                    float: left
+                    height: 64px
+                    margin: 0 5px 0 0
+                    padding: 3px
+                    background: #FFFFFF
+                p
+                    padding: 0
+                    margin: 0
+                    font-size: 10px
+                a.author
+                    font-size: 12px
+            .fb-like.faces-only
+                margin-top: 10px
+    .entry-content, .page-content
+        margin-bottom: 10px
+        padding-bottom: 24px
+        background: url(#{$image-path}/line_horizon.png) repeat-x bottom left
+        h2
+            margin-top: 30px
+            margin-bottom: 30px
+        h3
+            font-size: 14px
+            color: lighten($text-color, 5)
+            margin-top: 10px
+            margin-bottom: 10px
+            border-bottom: 1px dashed darken(#DDDDDD, 10)
+        h4
+            color: lighten($text-color, 15)
+            margin-bottom: 5px
+        p
+            font-size: 14px
+            margin-bottom: 20px
+            img
+                max-width: 99%
+                border: 1px solid #EEEEEE
+                &.left
+                    @include before-clear
+                    height: auto
+                    width: auto
+                    float: left
+                &.right
+                    @include before-clear
+                    height: auto
+                    width: auto
+                    float: right
+                &.center
+                    @include before-clear
+                    height: auto
+                    width: auto
+                    display: block
+                    margin-left: auto
+                    margin-right: auto
+        figure.img
+            img
+                max-width: 99%
+                border: 1px solid #EEEEEE
+                &.left
+                    @include before-clear
+                    height: auto
+                    width: auto
+                    float: left
+                &.right
+                    @include before-clear
+                    height: auto
+                    width: auto
+                    float: right
+                &.center
+                    @include before-clear
+                    height: auto
+                    width: auto
+                    margin-left: auto
+                    margin-right: auto
+        ul, ol
+            margin-bottom: 20px
+            ul
+                margin-bottom: 0px
+            li
+                list-style-type: disc
+                margin-left: 20px
+                padding: 3px 0px
+                font-size: 14px
+            li li
+                list-style-type: circle
+            li li li
+                list-style-type: square
+        ol
+            li
+                list-style-type: decimal
+            li li
+                list-style-type: lower-roman
+            li li li
+                list-style-type: lower-alpha
+        // 引用
+        blockquote
+            padding: 5px 5px 5px 10px
+            margin-bottom: 20px
+            border-left: 5px solid #c9c8c3
+            font-style: italic
+            background-color: #e9e7e3
+            p
+                margin: 0
+                padding: 0
+            footer
+                margin-top: 10px
+                text-align: right
+        // コードハイライト
+        pre
+            font-size: 12px
+            white-space: pre
+        figure.code
+            margin-bottom: 20px
+            .highlight
+                table
+                    margin-bottom: 0
+                    tr
+                        background: none
+                        td
+                            padding: 0
+                            vertical-align: middle
+                            &.code
+                                width: 100%
+        // AA
+        pre.aa
+            padding: 0px
+            margin-bottom: 20px
+            background: none
+            border: none
+            box-shadow: none
+            color: inherit
+        // 見出し付き画像
+        div.imagebox
+            position: relative
+            display: inline-block
+            img
+                max-width: 99%
+                vertical-align: bottom
+            p.caption
+                @include alpha(65)
+                position: absolute
+                max-width: 99%
+                bottom: 0
+                left: 0
+                margin: 0
+                padding: 4px
+                display: block
+                color: #FFFFFF
+                background-color: #000000
+                &:after
+                    content: ""
+                    display: inline
+                    clear: none
+        // 脚注
+        .footnotes
+            margin-top: 30px
+            hr
+                height: 1px
+                border: none
+                background: url(#{$image-path}/line_horizon.png) repeat-x bottom left
+            ol li
+                margin-left: 20px
+                list-style-type: decimal
+                p
+                    font-size: 10px 
+    footer
+        section.related-posts
+            margin-bottom: 20px
+            padding-bottom: 10px
+            background: url(#{$image-path}/line_horizon.png) repeat-x bottom left
+            h4
+                font-size: 18px
+                margin-bottom: 10px
+            ul li a
+                @include hover-light
+                display: block
+                background: url(#{$image-path}/arrow_blue.jpg) 0 7px no-repeat
+                padding: 3px 0 3px 13px
+
+
+/**
+ * カテゴリー
+ */
+div.main.blog.categories
+    ul.categories
+        li a
+            @include hover-light
+            display: block
+            padding: 10px 0
+            font-size: 14px
+            background: url(#{$image-path}/line_horizon.png) repeat-x bottom left
+
+/**
+ * サイドバー
+ */
+div.contents aside.sidebar div.side
+    section
+        margin-bottom: 40px
+        h3
+            font-size: 12px
+            font-weight: bold
+            margin-bottom: 10px
+            padding-bottom: 5px
+            background: url(#{$image-path}/line_horizon.png) repeat-x bottom left
+        #recent_posts
+            li a
+                @include hover-light
+                display: block
+                margin-bottom: 5px
+                padding-bottom: 5px
+                border-bottom: 1px dashed lighten($text-color, 50)
+
+
+/**
+ * 共通
+ */
+div.contents div.main.blog
+    #blog-archives
+        li
+            list-style: none
+            margin-left: 0
+div.contents div.main.blog div.pager
+    @include clearfix
+    width: 100%
+    .next
+        float: right
+        text-decoration: none
+        background: url(#{$image-path}/arrow_blue.jpg) 0 3px no-repeat
+        padding: 0 0 0 13px
+    .previous
+        float: left
+        text-decoration: none
+        background: url(#{$image-path}/arrow_blue_reverse.jpg) 0 3px no-repeat
+        padding: 0 0 0 13px
+    a
+        @include hover-light
+

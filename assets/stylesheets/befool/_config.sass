@@ -1,0 +1,59 @@
+/**
+ * configuration
+ */
+$text-color: #554e44
+$bg-color: #f4f2ec
+$image-color: #658AAD
+$link-color: darken($image-color, 5)
+$category-bg-color: #554e44
+$category-text-color: #FFFFFF
+$width-full: 960px
+$width: 650px
+$width-outer: 689px
+$line-height: 1.8
+
+
+// 既存のsass向け
+$solarized: light
+//$pre-border: #EEEEEE
+$noise-bg: image-url('noise.png') top left
+$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace
+$sans: "PT Sans", "Helvetica Neue", Arial, sans-serif
+.mono
+    font-family: $mono
+.sans
+    font-family: $sans
+
+
+/**
+ * mixin
+ */
+@mixin hover-light
+    &:hover
+        opacity: 0.7
+        filter: alpha(opacity = 70)
+@mixin after-clear
+    &:after
+        content: "."
+        display: block
+        clear: both
+        height: 0
+        margin-top: 0px !important
+        margin-bottom: 0px !important
+        visibility: hidden
+@mixin before-clear
+    &:before
+        content: "."
+        display: block
+        clear: both
+        height: 0
+        margin-top: 0px !important
+        margin-bottom: 0px !important
+        visibility: hidden
+@mixin clearfix
+    @include after-clear
+    @include before-clear
+@mixin alpha($opacity: 70)
+    opacity: $opacity / 100
+    filter: alpha(opacity = $opacity)
+

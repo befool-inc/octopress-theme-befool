@@ -1,0 +1,14 @@
+exclude:
+  - Gemfile*
+gems:
+  - octopress-genesis-theme
+  - octopress-debugger
+  - octopress-quote-tag
+  - octopress-solarized
+  - octopress-codefence
+url: http://octopress.org/
+
+ink_watch: theme
+redcarpet:
+  extensions:
+    - footnotes

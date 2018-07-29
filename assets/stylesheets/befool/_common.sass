@@ -1,0 +1,299 @@
+/**
+ * BEFOOL側でCSSを整理したいので用意
+ */
+
+@import "reset"
+
+body
+  color: $text-color
+  background: $bg-color
+  font-size: 12px
+  font-family: sans-serif, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ
+  margin: 0
+  padding: 0
+  min-width: 1180px
+  a
+    color: $link-color
+    text-decoration: none
+    &:hover
+      color: $link-color
+      text-decoration: underline
+    &:visited
+      color: $link-color
+
+
+#main > #content > .contents
+  width: $width-full
+  margin: 0 auto
+  overflow: hidden
+
+div.contents header h1.page-title
+  height: 80px
+  font-size: 30px
+
+div.contents div.main
+  // 超基本項目
+  color: $text-color
+  width: $width
+  float: left
+  padding-right: $width-outer - $width
+  padding-bottom: 50px
+
+  article
+    footer
+      div.sharing
+        @include clearfix
+        width: 100%
+        height: 70px
+        overflow: visible
+        text-align: right
+        div,
+        .pocket-btn
+          display: inline
+
+  // ページ上部見出し画像など
+  .kvimage
+    margin-bottom: 35px
+  .kvtext
+    width: 650px
+    margin-bottom: 62px
+    h2
+      font-size: 20px
+      line-height: 20px
+      padding: 0px
+      margin-bottom: 20px
+      font-weight: normal
+      background: none
+    p
+      line-height: 24px
+
+  // 標準的な内容
+  h2
+    padding: 4px 0 3px 19px
+    margin-top: 0px
+    margin-bottom: 24px
+    font-size: 16px
+    font-weight: bold
+    background: url(#{$image-path}/recruit/bg_titleicon.gif) 0 1px no-repeat
+  p
+    @include after-clear
+    line-height: $line-height
+    margin-top: 10px
+    margin-bottom: 20px
+    img.left
+      float: left
+      display: block
+      margin-right: 20px
+      height: 165px
+      border: 1px solid #e5e0d4
+    span.serifu
+      font-weight: bold
+
+  // テーブル
+  .before_table
+    width: 100%
+    height: 1px
+    background: url(#{$image-path}/line_horizon.png) repeat-x bottom left
+  table
+    width: 100%
+    margin-bottom: 50px
+    tr
+      background: url(#{$image-path}/line_horizon.png) repeat-x bottom left
+      th
+        width: 149px
+        padding: 15px 0 15px 20px
+        text-align: left
+        vertical-align: middle
+        background: url(#{$image-path}/line_horizon.png) repeat-x bottom left #e1ddd3
+      td
+        text-align: left
+        vertical-align: top
+        width: 479px
+        padding: 15px 0 15px 20px
+        line-height: $line-height
+  table.form
+    .error
+      margin-top: 10px
+      color: #990000
+
+footer
+  .footerInner
+    background: url(#{$image-path}/bg_footer.png) center bottom repeat-x
+    width: 100%
+    margin: 0 auto
+    height: 250px
+    overflow: auto
+    .totop
+      width: 66px
+      margin: 0 auto
+      a
+        @include hover-light
+        display: block
+        width: 66px
+        height: 38px
+        background: url(#{$image-path}/btn_pagetop.jpg) no-repeat top left
+        text-indent: -9999px
+        overflow: hidden
+  .footerBottom
+    padding: 32px 0 0
+    height: 83px
+    text-align: center
+    color: #efebe2
+    background: url(#{$image-path}/bg_footer_pattern.jpg) 0 bottom repeat-x
+    .footerBottomInner
+      width: 960px
+      margin: 0 auto
+      .copyright
+          text-align: center
+          clear: both
+    .footermenu
+      margin-left: 230px
+      border-left: #efebe2 solid 1px
+      margin-bottom: 22px
+      display: block
+      overflow: hidden
+      li
+        border-right: #efebe2 solid 1px
+        padding: 0 24px
+        float: left
+        display: block
+    a, a:visited
+      color: #ffffff
+      text-decoration: none
+    a:hover
+      color: #e5e0d4
+
+
+/**
+ * ぱんくず
+ */
+nav div.pan
+  height: 38px
+  margin-bottom: 53px
+  background: url(#{$image-path}/bg_pan.jpg) 0 0 repeat-x
+  font-size: 10px
+  line-height: 24px
+  &.about
+    background: url(#{$image-path}/bg_pan.jpg) 0 0 repeat-x
+  ul
+    width: 968px
+    margin: 0 auto
+    padding: 6px 0 0 20px
+    overflow: hidden
+    &.company
+      background: url(#{$image-path}/bg_pan_on.jpg) 513px 0 no-repeat
+    &.service
+      background: url(#{$image-path}/bg_pan_on.jpg) 642px 0 no-repeat
+    &.recruit
+      background: url(#{$image-path}/bg_pan_on.jpg) 774px 0 no-repeat
+    &.blog
+      background: url(#{$image-path}/bg_pan_on2.jpg) 887px 0 no-repeat
+    li
+      float: left
+      padding: 6px 18px 12px 7px
+      color: #FFF
+      background: url(#{$image-path}/bg_pan_ico01.jpg) right 0 no-repeat
+      &.parts
+        padding: 6px 18px 12px 7px
+        background: url(#{$image-path}/bg_pan_ico02.jpg) right 0 no-repeat
+      &:last-child
+        padding: 6px 18px 12px 7px
+        color: #d7d7d7
+        background: url(#{$image-path}/bg_pan_ico03.jpg) right 0 no-repeat
+      a
+        color: #FFF
+        text-decoration: none
+        &:hover
+          color: #e5e0d4
+
+
+/**
+ * 実績紹介用
+ */
+.contents div.main
+  ul.works
+    overflow: hidden
+    border-top: 1px solid #c4bead
+    border-bottom: 1px solid #f1f6f9
+    li.work
+      clear: both
+      padding: 29px 0 33px
+      border-bottom: 1px solid #c4bead
+      border-top: 1px solid #f1f6f9
+      @include after-clear
+      img.left
+        float: left
+        width: 190px
+        height: 118px
+        border: 1px solid #e5e0d4
+      h3
+        float: right
+        width: 431px
+        font-size: 14px
+        font-weight: bold
+        margin: 4px 0 18px
+      p
+        float: right
+        width: 431px
+      dl
+        float: right
+        overflow: hidden
+        width: 431px
+        margin: 0 0 -19px
+        padding-top: 14px
+        background: url(#{$image-path}/line_horizon.gif) repeat-x left top
+        dt
+          clear: both
+          float: left
+          width: 76px
+          &.url
+            padding-top: 5px
+        dd
+          float: right
+          width: 355px
+          margin-bottom: 13px
+          text-align: left
+          img
+            padding-right: 8px
+        dd.services
+          li
+            float: left
+            overflow: hidden
+            margin-right: 10px
+            margin-bottom: 5px
+            padding-left: 15px
+            background: url(#{$image-path}/outline/icon_check.gif) no-repeat 0 3px
+        dd.url
+          a
+            @include hover-light
+            font-weight: bold
+            text-decoration: none
+            color: #554e44
+        dd.copyright
+          font-size: 10px
+
+
+/**
+ * その他細かい装飾系
+ */
+.strong
+  font-weight: bold
+.note
+  color: #999999
+p.btnsocial
+  border: 0px
+  width: 179px
+  height: 40px
+  margin: 69px 0 0 220px
+  display: block
+  &:hover
+    background: url(#{$image-path}/recruit/btn_social_on.gif) no-repeat 0 0
+p.btnentry
+  border: 0px
+  width: 179px
+  height: 40px
+  margin: 25px 0 0 235px
+  display: block
+  &:hover
+    background: url(#{$image-path}/recruit/btn_works_on.gif) no-repeat 0 0
+

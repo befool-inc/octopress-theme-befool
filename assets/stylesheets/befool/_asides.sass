@@ -1,0 +1,105 @@
+/**
+ * BEFOOL側でCSSを整理したいので用意
+ *
+ * サイドバー用
+ */
+
+div.contents
+  aside.sidebar
+    div.side
+      width: 230px
+      padding-left: 40px
+      float: right
+
+      // メニュー
+      div.menu
+        margin: -21px 0 80px 0
+        .title
+          height: 21px
+          vertical-align: top
+        ul
+          overflow: hidden
+        li
+          a, .active
+            display: block
+            width: 230px
+            height: 44px
+            text-indent: -9999px
+          &:last-child a
+            height: 45px
+      
+          // 事業内容メニュー
+          @for $i from 1 through 5
+            &.menu0#{$i} a
+              background: url(#{$image-path}/side/menu_side_0#{$i}.jpg) 0 0 no-repeat
+            &.menu0#{$i} .active, &.menu0#{$i} a:hover
+              background: url(#{$image-path}/side/menu_side_0#{$i}_on.jpg) 0 0 no-repeat
+          // 会社情報メニュー
+          @for $i from 1 through 7
+            &.outline0#{$i} a
+              background: url(#{$image-path}/outline/menu_side_0#{$i}.gif) 0 0 no-repeat
+            &.outline0#{$i} .active, &.outline0#{$i} a:hover
+              background: url(#{$image-path}/outline/menu_side_0#{$i}_on.gif) 0 0 no-repeat
+          // 採用情報メニュー
+          @for $i from 1 through 5
+            &.entry0#{$i} a
+              background: url(#{$image-path}/recruit/menu_side_0#{$i}.jpg) 0 0 no-repeat
+            &.entry0#{$i} .active, &.entry0#{$i} a:hover
+              background: url(#{$image-path}/recruit/menu_side_0#{$i}_on.jpg) 0 0 no-repeat
+      
+      // 実績紹介
+      .work
+        margin-bottom: 30px
+        .title
+          padding: 0 0 7px 0
+          background: url(#{$image-path}/line_horizon.png) bottom left repeat-x
+        li
+          background: url(#{$image-path}/line_horizon.png) bottom left repeat-x
+          .image
+            display: block
+            float: left
+            height: 52px
+            padding: 3px
+            margin-right: 11px
+            background: #FFF
+            border: #d9d4c7 solid 1px
+          .text
+            padding-top: 5px
+          a
+            @include hover-light
+            display: block
+            padding: 5px 0
+            overflow: hidden
+            color: #554e44
+            text-decoration: none
+
+      // バナー
+      .info
+        li
+          overflow: hidden
+          margin-bottom: 10px
+          vertical-align: bottom
+          line-height: 0px
+          *font-size: 0px
+          background: #FFF
+          border: 1px solid #E5E0D4
+          a
+            @include-hover
+            display: block
+            width: 228px
+            height: 80px
+            text-indent: -9999px
+            background: #FFF
+          &.info_recruit a
+            background: url(#{$image-path}/side/btn_info01.jpg) 0 0 no-repeat
+          &.info_blog a
+            background: url(#{$image-path}/side/btn_info02.jpg) 0 0 no-repeat
+          &.info_faq a
+            background: url(#{$image-path}/side/btn_info03.jpg) 0 0 no-repeat
+          &.info_blog_other a
+            height: 58px
+            background: url(#{$image-path}/side/btn_info_01.jpg) 0 0 no-repeat
+          &.info_faq_other a
+            height: 58px
+            background: url(#{$image-path}/side/btn_info_02.jpg) 0 0 no-repeat
+

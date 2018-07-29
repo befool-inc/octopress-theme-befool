@@ -1,0 +1,236 @@
+---
+---
+
+/**
+ * BEFOOL側でCSSを整理したいので用意
+ *
+ * index用
+ */
+
+$image-path: {{ theme.images_path }}
+
+@import "befool/_config.sass"
+
+// スライド
+.KVWrapper
+    $image-width: 960px
+    $image-height: 254px
+    $vpadding: 7px
+    $hpadding: 7px
+    $contain-width: $image-width + $hpadding
+    $contain-height: $image-height + $vpadding + $vpadding
+    clear: both
+    width: 100%
+    height: 322px
+    padding-top: 20px
+    overflow: hidden
+    .KV
+        width: 100%
+        position: relative
+        height: 302px
+        background: url(../#{$image-path}/bg_kv.jpg) 0 0 repeat-x
+        .leftlayar
+            float: left
+            height: $contain-height
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 90
+        .rightlayar
+            float: right
+            height: $contain-height
+            position: absolute
+            top: 0
+            right: 0
+            z-index: 90
+        .flexslider
+            width: $image-width + $hpadding + $hpadding
+            height: 302px
+            margin: 0 auto
+            .flex-viewport
+                height: $contain-height 
+                ul.slides
+                    height: $image-height
+                    padding: $vpadding $hpadding
+                    li
+                        width: $image-width
+                        height: $image-height
+                        position: relative
+                        img.topimage
+                            width: $image-width
+                        .floatitem
+                            position: absolute
+                            top: -15px
+                            left: 87px
+                            z-index: 100
+                            display: none
+                        &.flex-active-slide
+                            z-index: 99
+                        &.clone
+                            .floatitem
+                                display: none
+    .bglayer
+        position: absolute
+        top: 0px
+        left: 0px
+        width: 100%
+        height: 302px
+        .kvbg
+            width: $image-width
+            height: $image-height
+            margin: $vpadding auto
+            text-align: center
+
+// コンテンツ
+.contents
+    clear: both
+    padding: 10px 0 0
+    .contentsInner
+        width: 970px !important
+        margin: 0 auto !important
+    .contentsInner
+        width: 970px
+        margin: 0 auto
+
+    .service
+        position: relative
+        height: 295px
+        padding-bottom: 52px
+        margin: 10px 0
+
+        li
+            float: left
+            margin-right: 4px
+            display: block
+            background: #FFF
+            a
+                cursor: pointer
+                background: #FFF
+            &:last-child
+                margin-right: 0
+            dl
+                @include hover-light
+                dt
+                    vertical-align: bottom
+                    line-height: 0px
+                dd
+                    vertical-align: bottom
+                    line-height: 0px
+                    position: relative
+                .morebtn
+                    display: block
+                    position: absolute
+                    bottom: 2px
+                    right: 2px
+        
+        .txt_ourservise
+            position: absolute
+            top: -5px
+            left: -70px
+
+    // ピックアップ
+    .pickup
+        clear: both
+        overflow: hidden
+        width: 695px
+        float: left
+        margin: 0 0 50px 0
+        .title
+            margin-bottom: 13px
+        ul
+            overflow: hidden
+            background: #FFF
+            border: #e5e0d4 solid 1px
+            li
+                float: left
+                a
+                    display: block
+                    width: 193px
+                    padding: 19px
+                    background: url(../#{$image-path}/line_vartical.png) top right repeat-y
+                    height: 227px
+                    cursor: pointer
+                    text-decoration: none
+                    @include hover-light
+                &:last-child a
+                    background: none
+                dt
+                    margin-bottom: 10px
+                dd
+                    width: 192px
+                    font-size: 12px
+                    color: #554e44
+                    margin-bottom: 6px
+                    line-height: $line-height
+                    &:last-child
+                        margin-bottom: 0
+
+    // ニュース
+    .news
+        clear: both
+        font-size: 12px
+        width: 695px
+        margin: 0 0 65px 0
+        .title
+            margin-bottom: 12px
+        a
+            display: inline-block
+            text-decoration: none
+        dl
+            clear: both
+            padding: 8px 0 5px
+            color: $text-color
+            text-decoration: none
+            background: url(../#{$image-path}/line_horizon.png) bottom left repeat-x
+            line-height: 2.8em
+            dt
+                float: left
+                width: 90px
+                color: $text-color
+                text-decoration: none
+                line-height: $line-height
+            dd
+                color: $text-color
+                text-decoration: none
+                line-height: $line-height
+                p
+                    color: $text-color
+                    text-decoration: none
+                    display: block
+                    overflow: hidden
+        .tonews
+            padding-top: 15px
+            text-align: right
+            a
+                padding: 0 0 0 15px
+                color: $text-color
+                font-weight: bold
+                background: url(../#{$image-path}/arrow_blue.jpg) 0 3px no-repeat
+                @include hover-light
+
+    // インフォ
+    .info
+        float: right
+        margin-right: 2px
+        .title
+            margin-bottom: 15px
+        li
+            overflow: hidden
+            margin-bottom: 10px
+            line-height: 0px
+            background: #FFF
+            border: 1px solid #E5E0D4
+            a
+                display: block
+                width: 228px
+                height: 80px
+                text-indent: -9999px
+                background: #FFF
+                @include hover-light
+            &.info_recruit a
+                background: url(../#{$image-path}/side/btn_info01.jpg) 0 0 no-repeat
+            &.info_blog a
+                background: url(../#{$image-path}/side/btn_info02.jpg) 0 0 no-repeat
+            &.info_faq a
+                background: url(../#{$image-path}/side/btn_info03.jpg) 0 0 no-repeat
+

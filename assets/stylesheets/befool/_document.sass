@@ -1,0 +1,63 @@
+/**
+ * BEFOOL側でCSSを整理したいので用意
+ *
+ * ドキュメント用
+ */
+
+/**
+ * サイトマップ
+ */
+div.main.document.sitemap
+  .block
+    clear: both
+    overflow: hidden
+    width: 650px
+    background: url(#{$image-path}/line_horizon.png) repeat-x top left
+    dl
+      clear: both
+      overflow: hidden
+      background: url(#{$image-path}/line_horizon.png) repeat-x bottom left
+      color: $text-color
+      dt
+        float: left
+        width: 190px
+        margin: 20px 0 0
+        font-size: 14px
+        font-weight: bold
+      dd
+        float: right
+        width: 459px
+        margin: 21px 0 20px
+        ul li
+          margin: 0 0 9px
+          a
+            @include hover-light
+            text-decoration: none
+            color: $text-color
+            background: url(#{$image-path}/arrow_blue.jpg) 0 1px no-repeat
+            padding: 0 0 0 13px
+
+
+/**
+ * プライバシーポリシー
+ */
+div.main.document.privacy
+  ol
+    margin-bottom: 20px
+    li
+      list-style-type: decimal
+      margin-left: 18px
+      padding-left: 5px
+  ul
+    margin-bottom: 20px
+    li
+      list-style-type: disc
+      margin-left: 18px
+      padding-left: 5px
+
+
+/**
+ * 個人情報の取り扱い
+ */
+div.main.document.personal
+  @extend div, .main, .document, .privacy
